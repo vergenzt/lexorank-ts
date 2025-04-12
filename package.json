@@ -63,7 +63,8 @@
     "yarn": "^1.22.19"
   },
   "files": [
-    "lib/**/*"
+    "lib/**/*",
+    "src/**/*"
   ],
   "dependencies": {}
 }
