@@ -78,6 +78,13 @@ export class LexoRank {
     return this._INITIAL_MAX_DECIMAL;
   }
 
+  private static get BUCKET_DECIMAL_SEPARATOR(): string {
+    if (!this._BUCKET_DECIMAL_SEPARATOR) {
+      this._BUCKET_DECIMAL_SEPARATOR = '|';
+    }
+    return this._BUCKET_DECIMAL_SEPARATOR;
+  }
+
   public static min(): LexoRank {
     return LexoRank.from(LexoRankBucket.BUCKET_0, LexoRank.MIN_DECIMAL);
   }
@@ -157,7 +164,7 @@ export class LexoRank {
   }
 
   public static parse(str: string): LexoRank {
-    const parts = str.split('|');
+    const parts = str.split(LexoRank.BUCKET_DECIMAL_SEPARATOR);
     const bucket = LexoRankBucket.from(parts[0]);
     const decimal = LexoDecimal.parse(parts[1], LexoRank.NUMERAL_SYSTEM);
     return new LexoRank(bucket, decimal);
@@ -188,6 +195,8 @@ export class LexoRank {
   private static _INITIAL_MIN_DECIMAL;
 
   private static _INITIAL_MAX_DECIMAL;
+
+  private static _BUCKET_DECIMAL_SEPARATOR = '|';
 
   private static middleInternal(
     lbound: LexoDecimal,
@@ -251,7 +260,7 @@ export class LexoRank {
   private readonly decimal: LexoDecimal;
 
   public constructor(bucket: LexoRankBucket, decimal: LexoDecimal) {
-    this.value = bucket.format() + '|' + LexoRank.formatDecimal(decimal);
+    this.value = bucket.format() + LexoRank.BUCKET_DECIMAL_SEPARATOR + LexoRank.formatDecimal(decimal);
     this.bucket = bucket;
     this.decimal = decimal;
   }
