@@ -1,6 +1,6 @@
-src
+# src
 __tests__
 jest.config.js
-tsconfig.json
+# tsconfig.json
 .eslintrc.js
 .prettierrc
