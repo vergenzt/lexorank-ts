@@ -164,7 +164,7 @@ export class LexoRank {
   }
 
   public static parse(str: string): LexoRank {
-    const parts = str.split(this.BUCKET_DECIMAL_SEPARATOR);
+    const parts = str.split(this.BUCKET_DECIMAL_SEPARATOR, 1);
     const bucket = LexoRankBucket.from(parts[0]);
     const decimal = LexoDecimal.parse(parts[1], this.NUMERAL_SYSTEM);
     return new this(bucket, decimal);
