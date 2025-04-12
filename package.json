@@ -6,8 +6,7 @@
     "name": "kvandake"
   },
   "license": "MIT",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "src/index.ts",
   "keywords": [
     "LexoRank",
     "JIRA"
