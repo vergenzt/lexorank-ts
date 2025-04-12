@@ -178,25 +178,25 @@ export class LexoRank {
     return new LexoRank(bucket, decimal);
   }
 
-  private static _NUMERAL_SYSTEM;
+  protected static _NUMERAL_SYSTEM;
 
-  private static _ZERO_DECIMAL;
+  protected static _ZERO_DECIMAL;
 
-  private static _ONE_DECIMAL;
+  protected static _ONE_DECIMAL;
 
-  private static _EIGHT_DECIMAL;
+  protected static _EIGHT_DECIMAL;
 
-  private static _MIN_DECIMAL;
+  protected static _MIN_DECIMAL;
 
-  private static _MAX_DECIMAL;
+  protected static _MAX_DECIMAL;
 
-  private static _MID_DECIMAL;
+  protected static _MID_DECIMAL;
 
-  private static _INITIAL_MIN_DECIMAL;
+  protected static _INITIAL_MIN_DECIMAL;
 
-  private static _INITIAL_MAX_DECIMAL;
+  protected static _INITIAL_MAX_DECIMAL;
 
-  private static _BUCKET_DECIMAL_SEPARATOR = '|';
+  protected static _BUCKET_DECIMAL_SEPARATOR;
 
   private static middleInternal(
     lbound: LexoDecimal,
