@@ -63,7 +63,8 @@
   },
   "files": [
     "lib/**/*",
-    "src/**/*"
+    "src/**/*",
+    "tsconfig.json"
   ],
   "dependencies": {}
 }
